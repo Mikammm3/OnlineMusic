@@ -23,6 +23,9 @@ public class Music {
         this.userId = userId;
     }
 
+    public Music() {
+    }
+
     public String getCreateTime() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return simpleDateFormat.format(createTime);

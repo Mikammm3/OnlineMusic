@@ -5,4 +5,23 @@
         insert into music (title,singer,url,user_id) values(#{title},#{singer},#{url},#{userId})
     </insert>
 
+    <update id="deleteByIds">
+        update music
+        set
+        delete_flag = 1
+        where id in
+        <foreach collection="ids" separator="," item="id" open="(" close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <!--    <select id="getMusicByIds" resultType="com.mika.music.model.Music">-->
+    <!--        select * from music-->
+    <!--        where id in-->
+    <!--        <foreach collection="ids" separator="," item="id" open="(" close=")">-->
+    <!--            #{id}-->
+    <!--        </foreach>-->
+    <!--    </select>-->
+
+
 </mapper>

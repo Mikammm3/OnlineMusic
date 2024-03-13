@@ -5,12 +5,12 @@ import lombok.Data;
 @Data
 public class ResponseBodyMessage<T> {
     private Integer code; // 200成功 -1失败 -2未登录
-    private String message;
+    private String errMsg;// 错误信息
     private T data;
 
-    public ResponseBodyMessage(Integer code, String message, T data) {
+    public ResponseBodyMessage(Integer code, String errMsg, T data) {
         this.code = code;
-        this.message = message;
+        this.errMsg = errMsg;
         this.data = data;
     }
 }
