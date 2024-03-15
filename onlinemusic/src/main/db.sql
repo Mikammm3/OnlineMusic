@@ -41,4 +41,9 @@ CREATE TABLE online_music.love_music (
            `create_time` DATETIME DEFAULT now(),
            `update_time` DATETIME DEFAULT now());
 
-INSERT INTO user(user_name,password) VALUES("bit","$2a$10$Bs4wNEkledVlGZa6wSfX7eCSD7wRMO0eUwkJH0WyhXzKQJrnk85li");
+-- 123 是密码
+INSERT INTO user(user_name,password) VALUES("mika","$2a$10$hSQvbzhZdwvq4dm/uVHYQe8eh74CEWz7tHqjYDdlzxLS51UB1E1Qu");
+INSERT INTO user(user_name,password) VALUES("zhangsan","$2a$10$hSQvbzhZdwvq4dm/uVHYQe8eh74CEWz7tHqjYDdlzxLS51UB1E1Qu");
+INSERT INTO user(user_name,password) VALUES("lisi","$2a$10$hSQvbzhZdwvq4dm/uVHYQe8eh74CEWz7tHqjYDdlzxLS51UB1E1Qu");
+INSERT INTO user(user_name,password) VALUES("wangwu","$2a$10$hSQvbzhZdwvq4dm/uVHYQe8eh74CEWz7tHqjYDdlzxLS51UB1E1Qu");
+INSERT INTO user(user_name,password) VALUES("zhaoliu","$2a$10$hSQvbzhZdwvq4dm/uVHYQe8eh74CEWz7tHqjYDdlzxLS51UB1E1Qu");

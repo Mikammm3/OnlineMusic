@@ -4,6 +4,7 @@ import com.mika.music.mapper.LoveMusicMapper;
 import com.mika.music.model.Music;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -31,5 +32,13 @@ public class LoveMusicService {
 
     public List<Music> getLovedMusicsByName(String name, Integer userId) {
         return loveMusicMapper.getLovedMusicsByName(name, userId);
+    }
+
+    public Integer deleteSelLoved(@RequestParam List<Integer> musicIds) {
+        return loveMusicMapper.deleteSelLoved(musicIds);
+    }
+
+    public Integer deleteLovedByMusicId(Integer musicId) {
+        return loveMusicMapper.deleteLovedByMusicId(musicId);
     }
 }

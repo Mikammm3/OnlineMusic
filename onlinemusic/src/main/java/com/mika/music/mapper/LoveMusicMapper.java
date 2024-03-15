@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,4 +28,10 @@ public interface LoveMusicMapper {
 
     @Select("select m.* from music m, love_music ml where ml.music_id = m.id and ml.user_id = #{userId} and m.title like CONCAT('%',#{name},'%') and m.delete_flag = 0")
     List<Music> getLovedMusicsByName(String name, Integer userId);
+
+
+    Integer deleteSelLoved(@RequestParam List<Integer> musicIds);
+
+    @Delete("delete from love_music where music_id = #{musicId}")
+    Integer deleteLovedByMusicId(Integer musicId);
 }

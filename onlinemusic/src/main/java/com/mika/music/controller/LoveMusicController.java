@@ -80,4 +80,34 @@ public class LoveMusicController {
 
     }
 
+    // 取消收藏
+    @RequestMapping("/delete")
+    public ResponseBodyMessage<Boolean> deleteLovedMusic(Integer musicId, HttpServletRequest request) {
+
+        // 检查是否登录
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute(Constant.USERINFO_SESSION_KEY) == null) {
+            return new ResponseBodyMessage<>(-2, "请登录后再操作", null);
+        }
+
+        if (musicId == null || musicId < 1) {
+            return new ResponseBodyMessage<>(-1, "userId 或 musicId 不合法", null);
+        }
+
+
+        User user = (User) session.getAttribute(Constant.USERINFO_SESSION_KEY);
+        Integer userId = user.getId();
+        log.info("userId: " + userId);
+        if (userId == null || userId < 1) {
+            return new ResponseBodyMessage<>(-1, "userId 或 musicId 不合法", null);
+        }
+
+        Integer result = loveMusicService.deleteLoved(musicId, userId);
+        if (result > 0) {
+            return new ResponseBodyMessage<>(200, null, true);
+        }
+        return new ResponseBodyMessage<>(-1, "移除音乐失败", false);
+
+    }
+
 }

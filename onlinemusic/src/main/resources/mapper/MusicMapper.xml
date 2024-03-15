@@ -15,13 +15,5 @@
         </foreach>
     </update>
 
-    <!--    <select id="getMusicByIds" resultType="com.mika.music.model.Music">-->
-    <!--        select * from music-->
-    <!--        where id in-->
-    <!--        <foreach collection="ids" separator="," item="id" open="(" close=")">-->
-    <!--            #{id}-->
-    <!--        </foreach>-->
-    <!--    </select>-->
-
 
 </mapper>

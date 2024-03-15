@@ -16,6 +16,7 @@ public class BCryptUtil {
         return newPassword;
     }
 
+    // 解密
     public static Boolean verify(String inputPassword, String sqlPassword) {
         if (!StringUtils.hasLength(sqlPassword)) {
             log.info("数据库密码为空");
