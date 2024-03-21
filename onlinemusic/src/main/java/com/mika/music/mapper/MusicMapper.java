@@ -4,7 +4,6 @@ import com.mika.music.model.Music;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -33,12 +32,4 @@ public interface MusicMapper {
     @Select("select * from music where title like concat('%', #{title}, '%') and delete_flag = 0")
     List<Music> getMusicsByName(String title);
 
-
-//    List<Music> getMusicByIds(@RequestParam List<Integer> ids);
-
-//    @Select("select * from music where delete_flag = 0 and id = #{id}")
-//    Music getMusicById(Integer id);
-
-//    @Select("select * from music where title like concat('%', #{title}, '%') and delete_flag = 0 and id = #{id}")
-//    List<Music> getMusicsByNameAndId(String title, Integer id);
 }

@@ -47,11 +47,4 @@ public class MusicService {
         return musicMapper.getMusicsByName(musicName);
     }
 
-//    public Music getMusicById(Integer id) {
-//        return musicMapper.getMusicById(id);
-//    }
-
-//    public List<Music> getMusicsByNameAndId(String title, Integer id) {
-//        return musicMapper.getMusicsByNameAndId(title, id);
-//    }
 }

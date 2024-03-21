@@ -103,7 +103,7 @@ public class MusicController {
             return new ResponseBodyMessage<>(-1, "该文件不是mp3格式", false);
         }
 
-        // 数据库上传存路径时，title 没有加后缀.mp3
+        // 数据库上传存路径时，title(歌名) 没有加后缀.mp3
         String url = "/music/get?path=" + title;
         Integer result = -1;
         try {
@@ -142,7 +142,7 @@ public class MusicController {
     }
 
     @RequestMapping("/delete")
-    public ResponseBodyMessage<Boolean> delete(Integer id, HttpServletRequest request) {
+    public ResponseBodyMessage<Boolean> delete(Integer id) {
         if (id == null || id < 1) {
             return new ResponseBodyMessage<>(-1, "id 不合法", false);
         }
@@ -157,7 +157,7 @@ public class MusicController {
 
 
     @RequestMapping("/deleteSel")
-    public ResponseBodyMessage<Boolean> deleteSelMusic(@RequestParam("id[]") List<Integer> id, HttpServletRequest request) {
+    public ResponseBodyMessage<Boolean> deleteSelMusic(@RequestParam("id[]") List<Integer> id) {
         if (id == null || id.size() <= 0) {
             log.error("ids: " + id);
             return new ResponseBodyMessage<>(-1, "请选中歌曲后再来删除", false);

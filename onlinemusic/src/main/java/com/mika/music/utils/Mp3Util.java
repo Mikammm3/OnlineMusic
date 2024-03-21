@@ -22,9 +22,4 @@ public class Mp3Util {
         return audioFile.hasID3v1Tag() || audioFile.hasID3v2Tag();
     }
 
-//    // 判断文件是否在数据库中存在
-//    public static Boolean isExist(String path, Integer singer, Integer userId) {
-//        File file = new File(path);
-//        return file.exists();
-//    }
 }

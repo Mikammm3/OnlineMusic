@@ -34,4 +34,5 @@ public interface LoveMusicMapper {
 
     @Delete("delete from love_music where music_id = #{musicId}")
     Integer deleteLovedByMusicId(Integer musicId);
+    
 }
